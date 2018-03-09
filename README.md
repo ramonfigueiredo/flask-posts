@@ -27,7 +27,7 @@ python db_create.py
 heroku run python db_create.py
 ```
 
-* Run the application in the Heroku environment
+* Run the application in the Local environment
 ```sh
 python app.py
 ```
@@ -42,7 +42,19 @@ This command will open the website url
 
 3) 
 heroku run python app.py
-This command show prints in the prompt
+This command show prints in the terminal. Useful when the Flask variable DEBUG = True
+```
+
+### Run python commands in Heroku
+
+* Add data in the Heroku PostgreSQL database right from the terminal
+```sh
+heroku run python
+
+>>> from app import db
+>>> from models import BlogPost
+>>> db.session.add(BlogPost("Test", "This is a post test on heroku"))
+>>> db.session.commit()
 ```
 
 ### Unit Tests
