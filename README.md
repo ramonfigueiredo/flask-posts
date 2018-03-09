@@ -11,7 +11,7 @@ flask-posts
 
 ### Installation
 ```sh
-git clone <repository>
+git clone https://github.com/ramon-pessoa/flask-posts.git
 cd flask-posts
 virtualenv venv
 pip install -r requirements.txt
