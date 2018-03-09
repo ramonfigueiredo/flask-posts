@@ -8,6 +8,8 @@ flask-posts
 * sqlite3
 * Flask-SQLAlchemy
 * A github account
+* sqlite3
+* PostgreSQL
 
 ### Installation
 ```sh
@@ -68,3 +70,10 @@ python test.py -v
 ```sh
 heroku run python test.py -v
 ```
+
+### PostgreSQL: Detailed Installation guides
+
+https://wiki.postgresql.org/wiki/Detailed_installation_guides#General_Linux
+
+* Debian/Ubuntu Linux
+https://help.ubuntu.com/community/PostgreSQL
