@@ -3,6 +3,7 @@ from flask import Flask, render_template, redirect, \
 	url_for, request, session, flash
 # from flask.ext.sqlalchemy import SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.exc import OperationalError
 from functools import wraps
 # import sqlite3
 
@@ -33,8 +34,13 @@ def login_required(f):
 @app.route('/')
 @login_required
 def home():
-	# return "Hello, World!" # return a string
-	posts = db.session.query(BlogPost).all()
+	posts=""
+	try:
+		# return "Hello, World!" # return a string
+		posts = db.session.query(BlogPost).all()
+	except OperationalError:
+		flash("You have no database! Please, contact your system administrator to set up the database!")
+
 	return render_template("index.html", posts=posts) # render a template
 
 @app.route('/welcome')
