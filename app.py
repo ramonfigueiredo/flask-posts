@@ -1,18 +1,21 @@
-# import the Flask class from the flask module
 from flask import Flask, render_template, redirect, \
 	url_for, request, session, flash
-# from flask.ext.sqlalchemy import SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import OperationalError
 from functools import wraps
 # import sqlite3
+import os
 
 # create the application object
 app = Flask(__name__)
 
-app.secret_key = "my precious"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+## LOCAL: Example to set environment variable in linux (ubuntu)
+# > export APP_SETTINGS="config.DevelopmentConfig"
+## HEROKU: Example to set environment variable in linux (ubuntu)
+# > heroku config:set APP_SETTINGS=config.ProductionConfig --remote heroku
+# config
+app.config.from_object(os.environ['APP_SETTINGS'])
+print os.environ['APP_SETTINGS']
 
 # create the sqlalchemy object
 db = SQLAlchemy(app)
@@ -73,4 +76,4 @@ def welcome():
 	return render_template("welcome.html")
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run()
