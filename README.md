@@ -10,7 +10,7 @@ flask-posts
 * A github account
 
 ### Installation
-
+```sh
 git clone <repository>
 cd flask-posts
 virtualenv venv
