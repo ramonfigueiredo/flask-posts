@@ -79,7 +79,6 @@ heroku run python test.py -v
 
 ### PostgreSQL: Detailed Installation guides
 
-https://wiki.postgresql.org/wiki/Detailed_installation_guides#General_Linux
+* Common operating systems: https://wiki.postgresql.org/wiki/Detailed_installation_guides#General_Linux
 
-* Debian/Ubuntu Linux
-https://help.ubuntu.com/community/PostgreSQL
+* Debian/Ubuntu Linux: https://help.ubuntu.com/community/PostgreSQL
