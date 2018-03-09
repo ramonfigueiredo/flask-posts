@@ -12,10 +12,10 @@ app = Flask(__name__)
 ## LOCAL: Example to set environment variable in linux (ubuntu)
 # > export APP_SETTINGS="config.DevelopmentConfig"
 ## HEROKU: Example to set environment variable in linux (ubuntu)
-# > heroku config:set APP_SETTINGS=config.ProductionConfig --remote heroku
+# >  
 # config
 app.config.from_object(os.environ['APP_SETTINGS'])
-print os.environ['APP_SETTINGS']
+print(os.environ['APP_SETTINGS'])
 
 # create the sqlalchemy object
 db = SQLAlchemy(app)
