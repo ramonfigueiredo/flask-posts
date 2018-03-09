@@ -15,8 +15,7 @@ flask-posts
 * Jinja2
 * psycopg2
 * psycopg2-binary
-
-Werkzeug
+* Werkzeug
 
 ### Installation
 ```sh
