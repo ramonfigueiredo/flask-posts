@@ -14,6 +14,6 @@ flask-posts
 ```sh
 git clone <repository>
 cd flask-posts
-virtual --no-site-packages venv
+virtualenv --no-site-packages venv
 pip install -r requirements.txt
 python app.py
