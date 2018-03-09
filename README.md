@@ -5,11 +5,18 @@ flask-posts
 * python 2.7
 * virtualenv
 * Flask
-* sqlite3
 * Flask-SQLAlchemy
+* SQLAlchemy
 * A github account
 * sqlite3
 * PostgreSQL
+* A heroku account
+* gunicorn
+* Jinja2
+* psycopg2
+* psycopg2-binary
+
+Werkzeug
 
 ### Installation
 ```sh
