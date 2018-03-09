@@ -15,6 +15,18 @@ git clone https://github.com/ramon-pessoa/flask-posts.git
 cd flask-posts
 virtualenv venv
 pip install -r requirements.txt
+
+* Create the database in the Local environment
+```sh
+python db_create.py
+```
+
+* Create the database in the Heroku environment
+```sh
+heroku run python db_create.py
+```
+
+```sh
 python app.py
 ```
 
