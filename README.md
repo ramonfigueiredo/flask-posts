@@ -20,12 +20,12 @@ python app.py
 
 ### Unit Tests
 
-# Local environment
+* Local environment
 ```sh
 python test.py -v
 ```
 
-# Heroku environment
+* Heroku environment
 ```sh
 heroku run python test.py -v
 ```
