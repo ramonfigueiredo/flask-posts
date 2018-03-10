@@ -8,7 +8,8 @@
 <h3>Posts:</h3>
 {% for post in posts %}
 	<strong>Title:</strong> {{ post.title }} <br>
-	<strong>Post:</strong> {{ post.description }} <br><br>
+	<strong>Post:</strong> {{ post.description }} <br>
+	<strong>Author:</strong> {{ post.author.name }} <br><br>
 {% endfor %}
 
 {% endblock %}
