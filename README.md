@@ -29,6 +29,17 @@ git clone https://github.com/ramon-pessoa/flask-posts.git
 cd flask-posts
 virtualenv venv
 pip install -r requirements.txt
+
+Install PostgreSQL database
+
+Create a database called flask_posts using the user postgresql and password postgresql in localhost:5432
+-> sudo -u postgres psql
+-> postgres=# CREATE DATABASE flask_posts;
+-> postgres=# \q
+
+Create the following environment variables:
+export APP_SETTINGS="config.DevelopmentConfig"
+export DATABASE_URL="postgresql://postgres:postgres@localhost:5432/flask_posts"
 ```
 
 * Create the database in the Local environment
@@ -88,3 +99,12 @@ heroku run python test.py -v
 * Common operating systems: https://wiki.postgresql.org/wiki/Detailed_installation_guides#General_Linux
 
 * Debian/Ubuntu Linux: https://help.ubuntu.com/community/PostgreSQL
+
+### flask-Migrate: SQLAlchemy database migrations
+
+* Local environment
+
+Initialize migrations
+```sh
+python manage.py db init
+```
