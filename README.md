@@ -2,22 +2,26 @@ flask-posts
 ===========================
 
 ### Requirements
-* python 2.7
-* virtualenv
-* Flask
-* Flask-SQLAlchemy
-* SQLAlchemy
-* A github account
-* sqlite3
-* PostgreSQL
-* A heroku account
-* gunicorn
-* Jinja2
-* psycopg2
-* psycopg2-binary
-* Werkzeug
-* flask-migrate
-* flask_script
+```sh
+alembic==0.9.8
+click==6.7
+Flask==0.12.2
+Flask-Migrate==2.1.1
+Flask-Script==2.0.6
+Flask-SQLAlchemy==2.3.2
+gunicorn==19.7.1
+itsdangerous==0.24
+Jinja2==2.10
+Mako==1.0.7
+MarkupSafe==1.0
+psycopg2==2.7.4
+psycopg2-binary==2.7.4
+python-dateutil==2.6.1
+python-editor==1.0.3
+six==1.11.0
+SQLAlchemy==1.2.5
+Werkzeug==0.14.1
+```
 
 ### Installation
 ```sh
