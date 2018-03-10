@@ -14,6 +14,7 @@ class BaseConfig(object):
 
 	## Example to set environment variable in linux (ubuntu)
 	# > export DATABASE_URL="sqlite:///posts.db"
+	# > export DATABASE_URL="postgresql://username:password@localhost:5432/database"
 	SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 	SQLALCHEMY_TRACK_MODIFICATIONS = False
 
