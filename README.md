@@ -17,6 +17,7 @@ flask-posts
 * psycopg2-binary
 * Werkzeug
 * flask-migrate
+* flask_script
 
 ### Installation
 ```sh
