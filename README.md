@@ -125,12 +125,24 @@ To apply the database migration, run the following command:
 python manage.py db upgrade
 ```
 
+* Heroku environment
+```sh
+heroku run python manage.py db upgrade
+```
+
 * Check the database migration
 
 ```sh
-Opens PostgreSQL shell
+Opens PostgreSQL shell in the Local environment
 sudo -u postgres psql
+```
 
+```sh
+Opens PostgreSQL shell in the Heroku environment
+heroku pg:psql
+```
+
+```sh
 Connects to flask_posts database
 \c flask_posts
 
