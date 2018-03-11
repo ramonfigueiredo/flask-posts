@@ -102,11 +102,20 @@ heroku run python test.py -v
 
 ### [flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/): [SQLAlchemy](https://www.sqlalchemy.org/) database migrations
 
-* Local environment
-
 Initialize migrations
+-> Creates a folder called migrations. This folder stores the configuration files as well as the system future migration scripts
+
+* Local environment
 ```sh
 python manage.py db init
 ```
 
-Make the programming of the new database structure upgrading models.py file
+Before creating your migration, you need to update the system models. So make the programming of the new database structure upgrading models.py file.
+
+To create the actual migration script, run the following command.
+The migration script is created in the folder: migrations > versions > <filename>.py
+
+* Local environment
+```sh
+python manage.py db migrate
+```
