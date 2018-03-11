@@ -86,12 +86,12 @@ heroku run python
 
 * Local environment
 ```sh
-python test.py -v
+python run_unit_tests.py -v
 ```
 
 * Heroku environment
 ```sh
-heroku run python test.py -v
+heroku run python run_unit_tests.py -v
 ```
 
 ### PostgreSQL: Detailed Installation guides
