@@ -190,7 +190,7 @@ git commit -m "Your message here."
 
 #### Deploy your application to Heroku
 
-The next step is to push the application's repository to Heroku. First, you have to get a place to push to from Heroku. You can do this with the ```sh heroku create ``` command:
+The next step is to push the application's repository to Heroku. First, you have to get a place to push to from Heroku. You can do this with the ```heroku create``` command:
 
 ```sh
 pip install Flask gunicorn
