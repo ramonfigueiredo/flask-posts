@@ -124,3 +124,34 @@ To apply the database migration, run the following command:
 ```sh
 python manage.py db upgrade
 ```
+
+* Check the database migration
+
+```sh
+Opens PostgreSQL shell
+sudo -u postgres psql
+
+Connects to flask_posts database
+\c flask_posts
+
+Shows the tables in the database
+\d
+
+Shows the posts table structure (schema)
+\d posts
+
+Select all data in posts table
+SELECT * FROM posts;
+
+Insert data into posts table
+INSERT INTO users VALUES(1, 'admin', 'admin@gmail.com', 'admin');
+
+Select all data in users table
+SELECT * FROM users;
+
+Update data in posts table
+UPDATE posts SET author_id = 1;
+
+Select all data in posts table
+SELECT * FROM posts;
+```
