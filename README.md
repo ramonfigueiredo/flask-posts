@@ -173,8 +173,6 @@ Now that you've written and tested your application, you need to store the proje
 
 Since your current directory contains a lot of extra files, you'll want to configure your repository to ignore these files with a ```.gitignore``` file:
 
-```.gitignore``` file:
-
 ```sh
 venv
 *.pyc
@@ -185,7 +183,7 @@ Next, we'll create a new git repository and save our changes.
 ```sh
 git init
 git add .
-git commit -m "Your message here."
+git commit -m "Your commit message here."
 
 ```
 
