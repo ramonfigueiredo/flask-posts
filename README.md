@@ -102,7 +102,7 @@ heroku run python test.py -v
 
 ### [flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/): [SQLAlchemy](https://www.sqlalchemy.org/) database migrations
 
-*Initialize migrations:* Creates a folder called migrations. This folder stores the configuration files as well as the system future migration scripts.
+**Initialize migrations:** Creates a folder called migrations. This folder stores the configuration files as well as the system future migration scripts.
 
 * Local environment
 ```sh
