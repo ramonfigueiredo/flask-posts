@@ -104,9 +104,9 @@ heroku run python test.py -v
 
 * Local environment
 
-	* Initialize migrations
+Initialize migrations
 ```sh
 python manage.py db init
 ```
 
-	* Make the programming of the new database structure upgrading models.py file
+Make the programming of the new database structure upgrading models.py file
