@@ -111,8 +111,7 @@ python manage.py db init
 
 Before creating your migration, you need to update the system models. So make the programming of the new database structure upgrading models.py file.
 
-To create the actual migration script, run the following command.
-The migration script is created in the folder: migrations > versions > filename.py
+The migration script is created in the folder: migrations > versions > filename.py . This script essentially have two main functions: upgrade and downgrade. To create the migration script, run the following command:
 
 * Local environment
 ```sh
