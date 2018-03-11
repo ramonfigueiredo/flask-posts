@@ -137,21 +137,21 @@ pip install Flask gunicorn
 
 #### Declare process types with Procfile
 
-Create a file in the root of the repository called Procfile with the context:
+Create a file in the root of the repository called ```Procfile``` with the context:
 
 ```sh
 web: gunicorn app:app
 ```
 
-To test if the Procfile is valid:
+To test if the ```Procfile``` is valid:
 
 ```sh
 foreman check
 ```
 
-You can now start the processes in your Procfile using Foreman (installed as part of the Toolbelt):
+You can now start the processes in your ```Procfile``` using Foreman (installed as part of the Toolbelt):
 
-Locally, instead of python app.py you can use:
+Locally, instead of ```python app.py``` you can use:
 
 ```sh
 foreman start
@@ -159,9 +159,9 @@ foreman start
 
 #### Specify dependencies with Pip
 
-Heroku recognizes Python applications by the existence of a requirements.txt file in the root of a repository. This simple format is used by most Python projects to specify the external Python modules the application requires.
+Heroku recognizes Python applications by the existence of a ```requirements.txt``` file in the root of a repository. This simple format is used by most Python projects to specify the external Python modules the application requires.
 
-Pip has a command (pip freeze) that will generate this file for us:
+Pip has a command (```pip freeze```) that will generate this file for you:
 
 ```sh
 pip freeze > requirements.txt
@@ -171,9 +171,10 @@ pip freeze > requirements.txt
 
 Now that you've written and tested your application, you need to store the project in a Git repository.
 
-Since your current directory contains a lot of extra files, you'll want to configure your repository to ignore these files with a .gitignore file:
+Since your current directory contains a lot of extra files, you'll want to configure your repository to ignore these files with a ```.gitignore``` file:
 
-.gitignore
+```.gitignore``` file:
+
 ```sh
 venv
 *.pyc
@@ -193,7 +194,7 @@ git commit -m "Your message here."
 The next step is to push the application's repository to Heroku. First, you have to get a place to push to from Heroku. You can do this with the ```heroku create``` command:
 
 ```sh
-pip install Flask gunicorn
+heroku create
 ```
 
 
