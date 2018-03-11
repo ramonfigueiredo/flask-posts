@@ -30,7 +30,7 @@ cd flask-posts
 virtualenv venv
 pip install -r requirements.txt
 
-Install [PostgreSQL](https://help.ubuntu.com/community/PostgreSQL) database
+Install PostgreSQL database: https://help.ubuntu.com/community/PostgreSQL
 
 Create a database called flask_posts using the user postgresql and password postgresql in localhost:5432
 -> sudo -u postgres psql
