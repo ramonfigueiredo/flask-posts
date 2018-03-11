@@ -89,7 +89,26 @@ heroku run python
 * Installed Python and Virtualenv in a unix-style environment.
 * Your application must use Pip to resolve dependencies.
 * A Heroku user account.
+* PostgreSQL installed locally, if running the app locally.
 
+Heroku CLI for Debian/Ubuntu
+```sh
+# Run this from your terminal.
+
+# The following will add our apt repository and install the CLI:
+
+sudo add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
+
+curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
+
+sudo apt-get update
+
+sudo apt-get install heroku
+```
+
+#### Local workstation setup
+
+* First, install the Heroku Toolbelt on your workstation.
 
 ### Unit Tests
 
