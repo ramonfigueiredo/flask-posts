@@ -95,7 +95,7 @@ heroku run python
 
 * First, install the Heroku Toolbelt on your workstation.
 
-Heroku CLI for Debian/Ubuntu:
+	* Heroku CLI for Debian/Ubuntu:
 
 ```sh
 # Run this from your terminal.
