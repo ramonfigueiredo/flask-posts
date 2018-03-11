@@ -108,3 +108,5 @@ heroku run python test.py -v
 ```sh
 python manage.py db init
 ```
+
+	* Make the programming of the new database structure upgrading models.py file
