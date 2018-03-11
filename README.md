@@ -91,7 +91,12 @@ heroku run python
 * A Heroku user account.
 * PostgreSQL installed locally, if running the app locally.
 
-Heroku CLI for Debian/Ubuntu
+#### Local workstation setup
+
+* First, install the Heroku Toolbelt on your workstation.
+
+Heroku CLI for Debian/Ubuntu:
+
 ```sh
 # Run this from your terminal.
 
@@ -105,10 +110,6 @@ sudo apt-get update
 
 sudo apt-get install heroku
 ```
-
-#### Local workstation setup
-
-* First, install the Heroku Toolbelt on your workstation.
 
 ### Unit Tests
 
