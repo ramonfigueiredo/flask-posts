@@ -95,7 +95,7 @@ heroku run python
 
 * First, install the Heroku Toolbelt on your workstation.
 
-	* Heroku CLI for Debian/Ubuntu:
+	* Heroku Command Line Interface (CLI) for Debian/Ubuntu:
 
 ```sh
 # Run this from your terminal.
@@ -109,6 +109,50 @@ curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
 sudo apt-get update
 
 sudo apt-get install heroku
+```
+
+#### Log in to Heroku (Enter your Heroku credentials: e-mail and password)
+
+```sh
+heroku login
+```
+
+#### Start Flask app inside a Virtualenv
+
+```sh
+virtualenv venv
+```
+
+#### Activate the Virtualenv
+
+```sh
+source venv/bin/activate
+```
+
+#### Install Flask gunicorn, if it is not installed
+
+```sh
+pip install Flask gunicorn
+```
+
+#### Declare process types with Procfile
+
+```sh
+web: gunicorn app:app
+```
+
+To test if the Procfile is valid:
+
+```sh
+foreman check
+```
+
+You can now start the processes in your Procfile using Foreman (installed as part of the Toolbelt):
+
+Locally, instead of python app.py you can use:
+
+```sh
+foreman start
 ```
 
 ### Unit Tests
