@@ -104,7 +104,7 @@ heroku run python test.py -v
 
 * Local environment
 
-Initialize migrations
+	* Initialize migrations
 ```sh
 python manage.py db init
 ```
