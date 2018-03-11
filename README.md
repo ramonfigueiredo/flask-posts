@@ -100,7 +100,7 @@ heroku run python test.py -v
 
 * Debian/Ubuntu Linux: https://help.ubuntu.com/community/PostgreSQL
 
-### [flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/): SQLAlchemy database migrations
+### [flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/): [SQLAlchemy](https://www.sqlalchemy.org/) database migrations
 
 * Local environment
 
