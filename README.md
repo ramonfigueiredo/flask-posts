@@ -137,6 +137,8 @@ pip install Flask gunicorn
 
 #### Declare process types with Procfile
 
+Create a file in the root of the repository called Procfile with the context:
+
 ```sh
 web: gunicorn app:app
 ```
@@ -153,6 +155,28 @@ Locally, instead of python app.py you can use:
 
 ```sh
 foreman start
+```
+
+#### Specify dependencies with Pip
+
+Heroku recognizes Python applications by the existence of a requirements.txt file in the root of a repository. This simple format is used by most Python projects to specify the external Python modules the application requires.
+
+Pip has a command (pip freeze) that will generate this file for us:
+
+```sh
+pip freeze > requirements.txt
+```
+
+#### Store your app in Git
+
+Now that you've written and tested your application, you need to store the project in a Git repository.
+
+Since your current directory contains a lot of extra files, you'll want to configure your repository to ignore these files with a .gitignore file:
+
+.gitignore
+```sh
+venv
+*.pyc
 ```
 
 ### Unit Tests
