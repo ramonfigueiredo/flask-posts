@@ -82,7 +82,13 @@ heroku run python
 >>> db.session.commit()
 ```
 
-### Unit Tests
+### Deploing to Heroku
+
+# Prerequisites
+
+* Installed Python and Virtualenv in a unix-style environment.
+* Your application must use Pip to resolve dependencies.
+* A Heroku user account.
 
 * Local environment
 ```sh
