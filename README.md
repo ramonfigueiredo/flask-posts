@@ -231,6 +231,13 @@ To see all Heroku commands:
 heroku
 ```
 
+For more informatino see [Getting started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
+
+Create the following environment variables:
+
+```sh
+heroku config:set APP_SETTINGS=config.ProductionConfig --remote heroku
+```
 
 ### Unit Tests
 
