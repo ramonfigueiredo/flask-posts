@@ -303,6 +303,20 @@ This command will set up the schema and can add data as well.
 heroku run python db_create.py
 ```
 
+If you want to add data manually.
+
+```sh
+heroku run python
+```
+
+```python
+from app import db
+from models import BlobPost
+db.session.add(BlogPost("Test", "Test 1"))
+db.session.commit()
+quit()
+```
+
 ### Unit Tests
 
 * Local environment
