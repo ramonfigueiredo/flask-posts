@@ -279,9 +279,13 @@ You can confirm the names and values of your app's config vars with the ```herok
 heroku config
 ```
 
-This system define the SQLALCHEMY_DATABASE_URI variable dynamically through the code: ```SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']``` in the ```config.py``` file. Therefore the connection to the heroku-postgres database should be work after the creation of the DATABASE_URL environment variable.
+This system define the SQLALCHEMY_DATABASE_URI variable dynamically through the code: ```SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']``` in the ```config.py``` file. Therefore the connection to the heroku-postgres database should work after the creation of the DATABASE_URL environment variable.
 
-To see if your database is running on legacy infrastructure, use pg:info:
+To see database information (for example if the database is running), use ```pg:info```:
+
+```sh
+heroku pg:info
+```
 
 ### Unit Tests
 
