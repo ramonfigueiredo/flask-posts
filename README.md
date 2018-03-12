@@ -287,6 +287,12 @@ To see database information (for example if the database is running), use ```pg:
 heroku pg:info
 ```
 
+Just to make sure if everything is OK, run your app in Heroku with the command:
+
+```sh
+heroku run python app.py
+```
+
 ### Unit Tests
 
 * Local environment
