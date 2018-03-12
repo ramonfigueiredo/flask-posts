@@ -309,6 +309,8 @@ If you want to add data manually.
 heroku run python
 ```
 
+Example:
+
 ```python
 from app import db
 from models import BlobPost
