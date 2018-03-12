@@ -249,6 +249,8 @@ Heroku Postgres is a managed SQL database service provided directly by Heroku. Y
 
 In addition to a variety of management commands available via the Heroku CLI, Heroku Postgres provides a web dashboard, the ability to share queries with dataclips, and several other helpful features.
 
+**Note:** Make sure your ```requirements.txt``` file has the Psycopg2 library. Psycopg2 is the PostgreSQL adapter for the Python programming language. At its core it fully implements the Python DB API 2.0 specifications. Several extensions allow access to many of the features offered by PostgreSQL.
+
 * Provisioning Heroku Postgres
 
 Before you provision Heroku Postgres, you should confirm that it isn’t already provisioned for your app.
