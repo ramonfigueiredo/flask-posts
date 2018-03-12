@@ -249,6 +249,40 @@ Heroku Postgres is a managed SQL database service provided directly by Heroku. Y
 
 In addition to a variety of management commands available via the Heroku CLI, Heroku Postgres provides a web dashboard, the ability to share queries with dataclips, and several other helpful features.
 
+* Provisioning Heroku Postgres
+
+Before you provision Heroku Postgres, you should confirm that it isn’t already provisioned for your app.
+
+Use the ```heroku addons``` command to determine whether your app already has Heroku Postgres provisioned:
+
+```sh
+heroku addons
+```
+
+If ```heroku-postgresql``` doesn’t appear in your app’s list of add-ons, you can provision it with the following CLI command:
+
+```sh
+heroku addons:create heroku-postgresql:<PLAN_NAME>
+```
+
+To use the free plan:
+
+```sh
+heroku addons:create heroku-postgresql:hobby-dev
+```
+
+As part of the provisioning process, a ```DATABASE_URL``` config var is added to your app’s configuration. This contains the URL your app uses to access the database.
+
+You can confirm the names and values of your app's config vars with the ```heroku config``` command.
+
+```sh
+heroku config
+```
+
+This system define the SQLALCHEMY_DATABASE_URI variable dynamically through the code: ```SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']``` in the ```config.py``` file. Therefore the connection to the heroku-postgres database should be work after the creation of the DATABASE_URL environment variable.
+
+To see if your database is running on legacy infrastructure, use pg:info:
+
 ### Unit Tests
 
 * Local environment
