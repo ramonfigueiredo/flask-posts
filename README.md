@@ -196,14 +196,14 @@ Create a Heroku remote repository with a random name:
 heroku create
 ```
 
-Note: You can also create an App using the website https://www.heroku.com/ > Log in > https://dashboard.heroku.com/apps > button New
-
 Create a Heroku remote repository with a specific name:
 ```sh
 heroku create flask-posts-rfp
 ```
 
-This automatically added the Heroku remote for your app to your repository. Now you can do a simple ```git push``` to deploy your application:
+**Note:** You can also create an App using the website https://www.heroku.com/ > Log in > https://dashboard.heroku.com/apps > button New
+
+```heroku create``` command automatically added the Heroku remote for your app to your repository. Now you can do a simple ```git push``` to deploy your application:
 
 ```sh
 git push heroku master
