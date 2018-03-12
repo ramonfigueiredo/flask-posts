@@ -295,6 +295,14 @@ Just to make sure if everything is OK, run your app in Heroku with the command:
 heroku run python app.py
 ```
 
+#### Run db_create.py file
+
+This command will set up the schema and can add data as well.
+
+```sh
+heroku run python db_create.py
+```
+
 ### Unit Tests
 
 * Local environment
