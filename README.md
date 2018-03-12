@@ -196,6 +196,8 @@ Create a Heroku remote repository with a random name:
 heroku create
 ```
 
+Note: You can also create an App using the website https://www.heroku.com/ > Log in > https://dashboard.heroku.com/apps > button New
+
 Create a Heroku remote repository with a specific name:
 ```sh
 heroku create flask-posts-rfp
@@ -231,13 +233,21 @@ To see all Heroku commands:
 heroku
 ```
 
-For more informatino see [Getting started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
-
-Create the following environment variables:
+Create the following environment variable:
 
 ```sh
 heroku config:set APP_SETTINGS=config.ProductionConfig --remote heroku
 ```
+
+For more informatino see [Getting started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
+
+#### Add-on Heroku Postgres
+
+All details in: [Heroku Postgres](https://devcenter.heroku.com/articles/heroku-postgresql)
+
+Heroku Postgres is a managed SQL database service provided directly by Heroku. You can access a Heroku Postgres database from any language with a PostgreSQL driver, including all languages officially supported by Heroku.
+
+In addition to a variety of management commands available via the Heroku CLI, Heroku Postgres provides a web dashboard, the ability to share queries with dataclips, and several other helpful features.
 
 ### Unit Tests
 
