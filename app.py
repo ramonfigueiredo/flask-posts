@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, \
 	url_for, request, session, flash
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
 from sqlalchemy.exc import OperationalError
 from functools import wraps
 # import sqlite3
@@ -8,6 +9,7 @@ import os
 
 # create the application object
 app = Flask(__name__)
+bcrypt = Bcrypt(app)
 
 ## LOCAL: Example to set environment variable in linux (ubuntu)
 # > export APP_SETTINGS="config.DevelopmentConfig"
