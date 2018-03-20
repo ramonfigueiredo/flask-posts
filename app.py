@@ -1,15 +1,12 @@
 from flask import Flask, render_template, redirect, \
 	url_for, request, session, flash
 from flask_sqlalchemy import SQLAlchemy
-from flask_bcrypt import Bcrypt
 from sqlalchemy.exc import OperationalError
 from functools import wraps
-# import sqlite3
 import os
 
 # create the application object
 app = Flask(__name__)
-bcrypt = Bcrypt(app)
 
 ## LOCAL: Example to set environment variable in linux (ubuntu)
 # > export APP_SETTINGS="config.DevelopmentConfig"
@@ -22,17 +19,33 @@ app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
 
 from models import *
+from project.users.view import users_blueprint
+
+# register the blueprints
+# > By registering the blueprint against the flask app 
+# > the future operations or functionality associated 
+# > with that blueprint will be executed when the
+# > flask app is initialized
+app.register_blueprint(users_blueprint)
+
+##########################
+#### helper functions ####
+##########################
 
 # login required decorator
-def login_required(f):
-	@wraps(f)
+def login_required(test):
+	@wraps(test)
 	def wrap(*args, **kwargs):
 		if 'logged_in' in session:
-			return f(*args, **kwargs)
+			return test(*args, **kwargs)
 		else:
 			flash('You need to login first.')
-			return redirect(url_for('login'))
+			return redirect(url_for('users.login'))
 	return wrap
+
+################
+#### routes ####
+################
 
 # use decorators to link the function to a url
 @app.route('/')
@@ -49,29 +62,11 @@ def home():
 
 @app.route('/welcome')
 def welcome():
-	return render_template("welcome.html")  # render a template
+	return render_template("welcome.html") # render a template
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-	error = None
-	if request.method == 'POST':
-		if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-			error = 'Invalid credentials. Please try again.'
-		else:
-			session['logged_in'] = True
-			flash('You were just logged in!')
-			return redirect(url_for('home'))
-	return render_template('login.html', error=error)
-
-@app.route('/logout')
-@login_required
-def logout():
-	session.pop('logged_in', None)
-	flash('You were just logged out!')
-	return redirect(url_for('welcome'))
-
-def welcome():
-	return render_template("welcome.html")
+####################
+#### run server ####
+####################
 
 if __name__ == '__main__':
 	app.run()
