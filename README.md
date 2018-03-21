@@ -27,7 +27,8 @@ Werkzeug==0.14.1
 
 ```Virtualenvwrapper``` provides a number of extensions to virtualenv, making it much easier to manage virtual environments.
 
-```Virtualenvwrapper``` documentation: https://virtualenvwrapper.readthedocs.io/en/latest/
+```Virtualenvwrapper``` documentation: 
+https://virtualenvwrapper.readthedocs.io/en/latest/
 
 * Installing ```Virtualenvwrapper``` globally (outside of your Flask project personal environment), so you can use Virtualenvwrapper with numerous projects.
 
