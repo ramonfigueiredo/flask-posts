@@ -30,7 +30,7 @@ Werkzeug==0.14.1
 ```Virtualenvwrapper``` documentation: 
 https://virtualenvwrapper.readthedocs.io/en/latest/
 
-* Installing ```Virtualenvwrapper``` globally (outside of your Flask project personal environment), so you can use Virtualenvwrapper with numerous projects.
+#### Installing ```Virtualenvwrapper``` globally (outside of your Flask project personal environment), so you can use Virtualenvwrapper with numerous projects.
 
 1st, ensure you're installing with sudo:
 
@@ -55,29 +55,29 @@ source ~/.bashrc
 sudo rm -r venv
 ```
 
-* To install a new virtual environment with Virtualenvwrapper
+#### To install a new virtual environment with Virtualenvwrapper
 ```sh
 mkvirtualenv vewflaskposts
 ```
 
 **Note:** The previous command activate the environment for you.
 
-* To get out the virtualenvwrapper environment
+#### To get out the virtualenvwrapper environment
 ```sh
 deactivate
 ```
 
-* To enter back into the virtualenvwrapper environment
+#### To enter back into the virtualenvwrapper environment
 ```sh
 workon vewflaskposts
 ```
 
-* To install the project dependencies with pip
+#### To install the project dependencies with pip
 ```sh
 pip install -r requirements.txt
 ```
 
-* Adding the environment variables to a virtualenvwrapper script that triggered after you activate the environment with the workon command.
+#### Adding the environment variables to a virtualenvwrapper script that triggered after you activate the environment with the workon command.
 
 After activate your virtualenvwrapper environment for the first time, use nano (or other text editor like: ```vi```, ```Atom Text Editor``` or ```Sublime Text Editor```) to edit the ```postactivate``` script.
 
@@ -102,7 +102,7 @@ Now whenever you activate your virtualenvwrapper environment, it will load those
 
 There is a lot of other things that you can do with your post activate script. Be sure to check out the Virtualenvwrapper documentation for more information.
 
-* Final notes:
+#### Final notes:
 
 We can see the new package with ```lssitepackages```:
 
