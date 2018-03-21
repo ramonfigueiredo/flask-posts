@@ -30,7 +30,7 @@ Werkzeug==0.14.1
 ```Virtualenvwrapper``` documentation: 
 https://virtualenvwrapper.readthedocs.io/en/latest/
 
-#### Installing ```Virtualenvwrapper``` globally (outside of your Flask project personal environment), so you can use Virtualenvwrapper with numerous projects.
+#### Installing ```Virtualenvwrapper``` globally (outside of your Flask project personal environment), so you can use Virtualenvwrapper with numerous projects
 
 1st, ensure you're installing with sudo:
 
@@ -77,7 +77,7 @@ workon vewflaskposts
 pip install -r requirements.txt
 ```
 
-#### Adding the environment variables to a virtualenvwrapper script that triggered after you activate the environment with the workon command.
+#### Adding the environment variables to a virtualenvwrapper script that triggered after you activate the environment with the workon command
 
 After activate your virtualenvwrapper environment for the first time, use nano (or other text editor like: ```vi```, ```Atom Text Editor``` or ```Sublime Text Editor```) to edit the ```postactivate``` script.
 
@@ -114,6 +114,12 @@ To see the workon_home path:
 
 ```sh
 $WORKON_HOME
+```
+
+To see file in workon_home:
+
+```sh
+ls $WORKON_HOME
 ```
 
 Switch between environments with workon:
