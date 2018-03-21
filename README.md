@@ -192,11 +192,9 @@ heroku run python db_create_users.py
 
 ```sh
 python run.py
-```
 
 Or
 
-```sh
 python manage.py runserver
 ```
 
