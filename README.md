@@ -189,6 +189,13 @@ heroku run python db_create_users.py
 ```
 
 * Run the application in the Local environment
+
+```sh
+python run.py
+```
+
+Or
+
 ```sh
 python manage.py runserver
 ```
@@ -202,7 +209,12 @@ heroku open
 This command will open the website url
 
 3) 
+heroku run python run.py
+
+Or
+
 heroku run python manage.py runserver
+
 This command show prints in the terminal. Useful when the Flask variable DEBUG = True
 ```
 
