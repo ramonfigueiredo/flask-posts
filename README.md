@@ -266,7 +266,7 @@ heroku login
 #### Start Flask app inside a Virtualenvwrapper
 
 ```sh
-workon venvw
+workon vewflaskposts
 ```
 
 #### Install Flask gunicorn, if it is not installed
