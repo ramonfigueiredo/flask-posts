@@ -23,11 +23,89 @@ SQLAlchemy==1.2.5
 Werkzeug==0.14.1
 ```
 
+### Virtualenvwrapper
+
+```Virtualenvwrapper``` provides a number of extensions to virtualenv, making it much easier to manage virtual environments.
+
+```Virtualenvwrapper``` documentation: https://virtualenvwrapper.readthedocs.io/en/latest/
+
+* Installing ```Virtualenvwrapper``` globally (outside of your Flask project personal environment), so you can use Virtualenvwrapper with numerous projects.
+
+1st, ensure you're installing with sudo:
+
+```sh
+sudo pip install virtualenvwrapper
+```
+
+2nd, append the following lines to your .bashrc file (with nano ~/.bashrc):
+
+```sh
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+```
+
+3rd, reload your profile
+```sh
+source ~/.bashrc
+```
+
+* Remove your previous virtualenv (if it exists)
+```sh
+sudo rm -r venv
+```
+
+* To install a new virtual environment with Virtualenvwrapper
+```sh
+mkvirtualenv vewflaskposts
+```
+
+**Note:** The previous command activate the environment for you.
+
+* To get out the virtualenvwrapper environment
+```sh
+deactivate
+```
+
+* To enter back into the virtualenvwrapper environment
+```sh
+workon vewflaskposts
+```
+
+* To install the project dependencies with pip
+```sh
+pip install -r requirements.txt
+```
+
+* Adding the environment variables to a virtualenvwrapper script that triggered after you activate the environment with the workon command.
+
+After activate your virtualenvwrapper environment for the first time, use nano (or other text editor like: ```vi```, ```Atom Text Editor``` or ```Sublime Text Editor```) to edit the ```postactivate``` script.
+
+```
+nano $VIRTUAL_ENV/bin/postactivate
+```
+
+Paste the following environment variables in the end of the postactivate script, save the script (in nano text editor: Ctrl+x > y > enter) and quit it.
+
+```sh
+export APP_SETTINGS="config.DevelopmentConfig"
+export DATABASE_URL="postgresql://postgres:postgres@localhost:5432/flask_posts"
+```
+
+Reload your virtualenvwrapper environment
+
+```sh
+workon vewflaskposts
+```
+
+Now whenever you activate your virtualenvwrapper environment, it will load those environment variables as well. So you do not actually have to manually enter those in everytime that you activate a environment (as happen when you use virtualenv).
+
+There is a lot of other things that you can do with your post activate script. Be sure to check out the Virtualenvwrapper documentation for more information.
+
 ### Installation
 ```sh
 git clone https://github.com/ramon-pessoa/flask-posts.git
 cd flask-posts
-virtualenv venv
+workon vewflaskposts
 pip install -r requirements.txt
 
 Install PostgreSQL database: https://help.ubuntu.com/community/PostgreSQL
@@ -52,9 +130,19 @@ python db_create.py
 heroku run python db_create.py
 ```
 
+* Create the data in the users table in the Local environment
+```sh
+python db_create_users.py
+```
+
+* Create the data in the users table in the Heroku environment
+```sh
+heroku run python db_create_users.py
+```
+
 * Run the application in the Local environment
 ```sh
-python app.py
+python manage.py runserver
 ```
 
 * Run the application in the Heroku environment
@@ -66,7 +154,7 @@ heroku open
 This command will open the website url
 
 3) 
-heroku run python app.py
+heroku run python manage.py runserver
 This command show prints in the terminal. Useful when the Flask variable DEBUG = True
 ```
 
@@ -117,16 +205,10 @@ sudo apt-get install heroku
 heroku login
 ```
 
-#### Start Flask app inside a Virtualenv
+#### Start Flask app inside a Virtualenvwrapper
 
 ```sh
-virtualenv venv
-```
-
-#### Activate the Virtualenv
-
-```sh
-source venv/bin/activate
+workon venvw
 ```
 
 #### Install Flask gunicorn, if it is not installed
@@ -140,7 +222,7 @@ pip install Flask gunicorn
 Create a file in the root of the repository called ```Procfile``` with the context:
 
 ```sh
-web: gunicorn app:app
+web: gunicorn run:app
 ```
 
 To test if the ```Procfile``` is valid:
@@ -157,7 +239,7 @@ Locally, instead of ```python app.py``` you can use:
 foreman start
 ```
 
-#### Specify dependencies with Pip
+#### Specify dependencies with Pip, if it is was not specified before
 
 Heroku recognizes Python applications by the existence of a ```requirements.txt``` file in the root of a repository. This simple format is used by most Python projects to specify the external Python modules the application requires.
 
@@ -176,6 +258,7 @@ Since your current directory contains a lot of extra files, you'll want to confi
 ```sh
 venv
 *.pyc
+*.db
 ```
 
 Next, we'll create a new git repository and save our changes.
@@ -323,12 +406,12 @@ quit()
 
 * Local environment
 ```sh
-python run_unit_tests.py -v
+python unit_tests.py -v
 ```
 
 * Heroku environment
 ```sh
-heroku run python run_unit_tests.py -v
+heroku run python unit_tests.py -v
 ```
 
 ### PostgreSQL: Detailed Installation guides
