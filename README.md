@@ -102,6 +102,30 @@ Now whenever you activate your virtualenvwrapper environment, it will load those
 
 There is a lot of other things that you can do with your post activate script. Be sure to check out the Virtualenvwrapper documentation for more information.
 
+* Final notes:
+
+We can see the new package with ```lssitepackages```:
+
+```sh
+lssitepackages
+```
+
+To see the workon_home path:
+
+```sh
+$WORKON_HOME
+```
+
+Switch between environments with workon:
+
+```sh
+(env1)$ workon vewflaskposts
+(vewflaskposts)$ echo $VIRTUAL_ENV
+/home/ramon/.virtualenvs/vewflaskposts
+(vewflaskposts)$
+```
+
+
 ### Installation
 ```sh
 git clone https://github.com/ramon-pessoa/flask-posts.git
