@@ -1,4 +1,4 @@
-from app import app
+from project import app
 import unittest
 
 class FlaskTestCase(unittest.TestCase):
@@ -57,6 +57,7 @@ class FlaskTestCase(unittest.TestCase):
 	def test_logout_page_requires_login(self):
 		tester = app.test_client(self)
 		response = tester.get('/logout', follow_redirects=True)
+		print('response.data', response.data)
 		self.assertTrue(b'You need to login first.' in response.data)
 
 	# Ensure that posts show up on the main page
