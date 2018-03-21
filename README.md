@@ -125,6 +125,23 @@ Switch between environments with workon:
 (vewflaskposts)$
 ```
 
+Create a new environment, in the WORKON_HOME:
+
+```sh
+mkvirtualenv mynewenv
+```
+
+To get out the virtualenvwrapper environment:
+
+```sh
+deactivate
+```
+
+Remove an environment, in the WORKON_HOME:
+
+```sh
+rmvirtualenv ENVNAME
+```
 
 ### Installation
 ```sh
