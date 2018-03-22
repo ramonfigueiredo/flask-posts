@@ -42,7 +42,6 @@ def login_required(test):
 def home():
 	posts=""
 	try:
-		# return "Hello, World!" # return a string
 		posts = db.session.query(BlogPost).all()
 	except OperationalError:
 		flash("You have no database! Please, contact your system administrator to set up the database!")
