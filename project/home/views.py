@@ -2,11 +2,11 @@
 #### imports ####
 #################
 
-from project import app, db
+from project import db
 from project.models import BlogPost
-from flask import flash, redirect, session, url_for, render_template, Blueprint
+from flask import render_template, Blueprint
 from sqlalchemy.exc import OperationalError
-from functools import wraps
+from flask_login import login_required
 
 ################
 #### config ####
@@ -17,20 +17,6 @@ home_blueprint = Blueprint(
     template_folder='templates'
 )
 
-##########################
-#### helper functions ####
-##########################
-
-# login required decorator
-def login_required(test):
-	@wraps(test)
-	def wrap(*args, **kwargs):
-		if 'logged_in' in session:
-			return test(*args, **kwargs)
-		else:
-			flash('You need to login first.')
-			return redirect(url_for('users.login'))
-	return wrap
 
 ################
 #### routes ####

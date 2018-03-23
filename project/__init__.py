@@ -5,7 +5,15 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
 import os
+
+'''
+flask-sqlalchemy: http://flask-sqlalchemy.pocoo.org/2.3/
+flask-bcrypt: https://flask-bcrypt.readthedocs.io/en/latest/
+blueprints: http://flask.pocoo.org/docs/0.12/blueprints/
+flask-login: https://flask-login.readthedocs.io/en/latest/
+'''
 
 #################
 #### config ####
@@ -13,21 +21,25 @@ import os
 
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
+login_manager = LoginManager()
+login_manager.init_app(app)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
 
-'''
-http://flask.pocoo.org/docs/0.12/blueprints/
 
-Flask uses a concept of blueprints for making application components and supporting common patterns within an application or across applications. 
-
-Blueprints can greatly simplify how large applications work and provide a central means for Flask extensions to register operations on applications.
-
-By registering the blueprint against the flask app the future operations or functionality associated with that blueprint will be executed when
-the flask app is initialized.
-'''
 from project.users.views import users_blueprint
 from project.home.views import home_blueprint
 
+# register the blueprints
 app.register_blueprint(users_blueprint)
 app.register_blueprint(home_blueprint)
+
+
+from models import User
+
+login_manager.login_view = "users.login"
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.filter(User.id == int(user_id)).first()
