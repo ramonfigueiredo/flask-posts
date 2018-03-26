@@ -14,8 +14,8 @@ from project.models import User, bcrypt
 ################
 
 users_blueprint = Blueprint(
-    'users', __name__,
-    template_folder='templates'
+	'users', __name__,
+	template_folder='templates'
 )
 
 ################
@@ -49,10 +49,7 @@ def logout():
 	return redirect(url_for('home.welcome'))
 
 
-@users_blueprint.route(
-    '/register', methods=['GET', 'POST'])   # pragma: no cover
-@users_blueprint.route(
-    '/register/', methods=['GET', 'POST'])   # pragma: no cover
+@users_blueprint.route('/register/', methods=['GET', 'POST'])
 def register():
 	form = RegisterForm()
 	if form.validate_on_submit():
