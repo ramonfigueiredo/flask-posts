@@ -1,3 +1,6 @@
 venv
 *.pyc
-*.db 
+*.db
+.coverage
+htmlcov
+coverage.xml

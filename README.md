@@ -7,6 +7,7 @@ alembic==0.9.8
 bcrypt==3.1.4
 cffi==1.11.5
 click==6.7
+coverage==4.5.1
 Flask==0.12.2
 Flask-Bcrypt==0.7.1
 Flask-Login==0.4.1
@@ -473,11 +474,19 @@ quit()
 * Local environment
 ```sh
 python unit_tests.py -v
+
+or
+
+python manage.py test
 ```
 
 * Heroku environment
 ```sh
 heroku run python unit_tests.py -v
+
+or
+
+heroku run python manage.py test
 ```
 
 ### PostgreSQL: Detailed Installation guides
@@ -553,3 +562,77 @@ UPDATE posts SET author_id = 1;
 Select all data in posts table
 SELECT * FROM posts;
 ```
+
+### Test Coverage with coverage.py
+
+* coverage.py : https://coverage.readthedocs.io/en/coverage-4.5.1/index.html
+
+#### Run the Test Coverage using the following command
+
+```sh
+python manage.py coverage
+```
+
+The above command runs the four following commands:
+
+1) Run unit tests and gather data
+
+```sh
+coverage run --source=project unit_tests.py -v
+```
+
+2) Report on the results
+
+```sh
+coverage report -m
+```
+
+The ```-m``` flag also shows the line numbers of missing statements:
+
+```sh
+Name                        Stmts   Miss  Cover   Missing
+---------------------------------------------------------
+project/__init__.py            19      0   100%
+project/home/__init__.py        0      0   100%
+project/home/forms.py           6      0   100%
+project/home/views.py           9      0   100%
+project/models.py              37      4    89%   23, 42, 48, 54
+project/users/__init__.py       0      0   100%
+project/users/forms.py         11      0   100%
+project/users/views.py         32      1    97%   65
+---------------------------------------------------------
+TOTAL                         114      5    96%
+```
+
+3) Get annotated HTML listings detailing missed lines
+
+```sh
+coverage html
+```
+
+The ```-d``` argument specifies an output directory, defaulting to “htmlcov”:
+
+```sh
+coverage html -d coverage_html
+```
+
+4) Erase previously collected coverage data
+
+```sh
+coverage erase
+```
+
+#### Notes
+
+```Coverage.py``` has a number of commands which determine the action performed:
+
+* **run** – Run a Python program and collect execution data.
+* **report** – Report coverage results.
+* **html** – Produce annotated HTML listings with coverage results.
+* **xml** – Produce an XML report with coverage results.
+* **annotate** – Annotate source files with coverage results.
+* **erase** – Erase previously collected coverage data.
+* **combine** – Combine together a number of data files.
+* **debug** – Get diagnostic information.
+
+The ```--include``` and ```--omit``` flags specify lists of file name patterns. They control which files to report on.
