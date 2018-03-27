@@ -1,8 +1,10 @@
-from flask_script import Manager
-from flask_migrate import Migrate, MigrateCommand
 import os
 import unittest
 from coverage import Coverage
+
+from flask_script import Manager
+from flask_migrate import Migrate, MigrateCommand
+
 from project import app, db
 
 '''
@@ -12,7 +14,6 @@ Alembic: http://alembic.zzzcomputing.com/en/latest/
 unittest : https://docs.python.org/2/library/unittest.html
 coverage.py : https://coverage.readthedocs.io/en/coverage-4.5.1/index.html
 '''
-
 
 app.config.from_object(os.environ['APP_SETTINGS'])
 migrate = Migrate(app, db)
@@ -31,7 +32,8 @@ def test():
 @manager.command
 def coverage():
 	"""Runs the unit tests with coverage."""
-	cov = Coverage(branch=True, include='project/*')
+	cov = Coverage(
+		branch=True, include='project/*', omit='*/__init__.py')
 	cov.start()
 	tests = unittest.TestLoader().discover('tests/', pattern='*.py')
 	unittest.runner.TextTestRunner(verbosity=2).run(tests)

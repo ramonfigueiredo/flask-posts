@@ -2,12 +2,12 @@
 #### imports ####
 #################
 
-from project import db
-from project.models import BlogPost
-from flask import render_template, Blueprint, flash, url_for, redirect, request
-from forms import MessageForm
-from sqlalchemy.exc import OperationalError
-from flask_login import login_required, current_user
+from project import db # pragma: no cover
+from project.models import BlogPost # pragma: no cover
+from flask import render_template, Blueprint, flash, url_for, redirect, request  # pragma: no cover
+from forms import MessageForm # pragma: no cover
+from sqlalchemy.exc import OperationalError # pragma: no cover
+from flask_login import login_required, current_user # pragma: no cover
 
 ################
 #### config ####
@@ -16,7 +16,7 @@ from flask_login import login_required, current_user
 home_blueprint = Blueprint(
     'home', __name__,
     template_folder='templates'
-)
+) # pragma: no cover
 
 
 ################
