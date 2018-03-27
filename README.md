@@ -1,6 +1,8 @@
 flask-posts
 ===========================
 
+[![Build Status](https://travis-ci.org/ramon-pessoa/flask-posts.svg?branch=master)](https://travis-ci.org/ramon-pessoa/flask-posts)
+
 ### Requirements
 ```sh
 alembic==0.9.8
