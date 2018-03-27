@@ -24,8 +24,8 @@ home_blueprint = Blueprint(
 ################
 
 # use decorators to link the function to a url
-@home_blueprint.route('/', methods=['GET', 'POST'])   # pragma: no cover
-@login_required   # pragma: no cover
+@home_blueprint.route('/', methods=['GET', 'POST'])
+@login_required
 def home():
 	error = None
 	form = MessageForm(request.form)

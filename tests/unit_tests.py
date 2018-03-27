@@ -119,4 +119,10 @@ class UsersViewsTests(BaseTestCase):
 			self.assertTrue(current_user.is_active())
 
 if __name__ == '__main__':
-	unittest.main()
+	unittest.main() # Run all tests in all classes
+
+	# suite = unittest.TestLoader().loadTestsFromTestCase(FlaskTestCase) # Run tests just in FlaskTestCase class
+	# unittest.TextTestRunner(verbosity=2).run(suite)
+	
+	# suite = unittest.TestLoader().loadTestsFromTestCase(UsersViewsTests) # Run tests just in UsersViewsTests class
+	# unittest.TextTestRunner(verbosity=2).run(suite)
