@@ -40,7 +40,7 @@ def coverage():
 	print 'Coverage Summary:'
 	cov.report(show_missing=True)
 	basedir = os.path.abspath(os.path.dirname(__file__))
-	covdir = os.path.join(basedir, 'coverage')
+	covdir = os.path.join(basedir, 'coverage_html')
 	cov.html_report(directory=covdir)
 	cov.erase()
 
