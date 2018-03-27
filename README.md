@@ -473,19 +473,11 @@ quit()
 
 * Local environment
 ```sh
-python unit_tests.py -v
-
-or
-
 python manage.py test
 ```
 
 * Heroku environment
 ```sh
-heroku run python unit_tests.py -v
-
-or
-
 heroku run python manage.py test
 ```
 
