@@ -1,11 +1,10 @@
 import os
 import unittest
-from coverage import Coverage
 
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 
-from project import app, db
+from project import app, db, cov
 
 '''
 flask-migrate : https://flask-migrate.readthedocs.io/en/latest/
@@ -32,9 +31,15 @@ def test():
 @manager.command
 def coverage():
 	"""Runs the unit tests with coverage."""
-	cov = Coverage(
-		branch=True, include='project/*', omit='*/__init__.py')
-	cov.start()
+	'''
+	coverage.py was created and started in the file project/__init__.py
+
+	http://coverage.readthedocs.io/en/latest/faq.html
+	See answer of "Why do the bodies of functions (or classes) show as executed, but the def lines do not?"
+
+	coverage.py is started after the functions are defined. 
+	To show definition lines as executed, it is necessary start coverage.py earlier.
+	'''
 	tests = unittest.TestLoader().discover('tests/', pattern='*.py')
 	unittest.runner.TextTestRunner(verbosity=2).run(tests)
 	cov.stop()
